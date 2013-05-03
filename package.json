@@ -1,0 +1,21 @@
+{
+  "name": "bops",
+  "version": "0.0.0",
+  "description": "buffer operations",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chrisdickinson/bops.git"
+  },
+  "keywords": [
+    "buffer",
+    "operations",
+    "binary"
+  ],
+  "author": "Chris Dickinson <chris@neversaw.us>",
+  "license": "MIT",
+  "gitHead": "11f41e69b1ab4507027ac162981913b268445b4a"
+}
