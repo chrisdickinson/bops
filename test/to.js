@@ -1,11 +1,11 @@
 var test = require('tape')
   , binary = require('../index')
 
-test('from utf8 works as expected', function(assert) {
+test('to utf8 works as expected', function(assert) {
   var buf = binary.from([198,146,101,108,108,111,32,230,183,190,230,183,190,230,183,190,32,104,101,108,108,111,32,119,111,114,108,100,32,230,183,190,230,183,190,32,121,101,112,32,198,146,117,117,32,230,183,190])
     , expect = 'ƒello 淾淾淾 hello world 淾淾 yep ƒuu 淾'
 
-  assert.equal(binary.to(buf, 'utf8'), expect)
+  assert.equal(expect, binary.to(buf, 'utf8'))
   assert.end()
 })
 
