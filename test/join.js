@@ -25,4 +25,6 @@ test('test that join works as expected', function(assert) {
     , binary.readUInt8(cur, j)
     )
   }
+
+  assert.end()
 })
