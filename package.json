@@ -1,6 +1,6 @@
 {
   "name": "bops",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "buffer operations",
   "main": "index.js",
   "scripts": {
@@ -36,15 +36,16 @@
     "base64-js": "0.0.2",
     "to-utf8": "0.0.1"
   },
-  "testling" : {
-    "files" : "test/index.js",
-    "browsers" : [
+  "testling": {
+    "files": "test/index.js",
+    "browsers": [
       "ie/6..latest",
       "chrome/20..latest",
       "firefox/10..latest",
       "safari/latest",
       "opera/11.0..latest",
-      "iphone/6", "ipad/6"
+      "iphone/6",
+      "ipad/6"
     ]
   }
 }
