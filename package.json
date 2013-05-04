@@ -38,7 +38,6 @@
   },
   "testling" : {
     "files" : "test/index.js",
-    "html" : "test/testling.html",
     "browsers" : [
       "ie/6..latest",
       "chrome/20..latest",
