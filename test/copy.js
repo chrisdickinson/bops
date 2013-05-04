@@ -16,7 +16,10 @@ test('copy works as expected', function(assert) {
   }
 
   // overlapping copy
+
+  console.log(tmp1)
   binary.copy(tmp1, tmp1, 2, 0, 6)
+  console.log(tmp1)
   for(var i = 2, len = 8; i < len; ++i) {
     assert.equal(binary.readUInt8(tmp1, i), binary.readUInt8(tmp2, i - 2)) 
   }

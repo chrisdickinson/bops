@@ -7,16 +7,17 @@ function join(targets, hint) {
     , curlen = cur.length
     , curidx = 0
     , curoff = 0
+    , i = 0
 
   while(i < len) {
     if(curoff === curlen) {
       curoff = 0
       ++curidx
       cur = targets[curidx]
-      curlen = cur.length
+      curlen = cur && cur.length
       continue
     }
-    out[i++] = targets[curoff++] 
+    out[i++] = cur[curoff++] 
   }
 
   return out

@@ -1,5 +1,7 @@
 module.exports = copy
 
+var slice = [].slice
+
 function copy(source, target, target_start, source_start, source_end) {
   target_start = arguments.length < 3 ? 0 : target_start
   source_start = arguments.length < 4 ? 0 : source_start
@@ -11,18 +13,18 @@ function copy(source, target, target_start, source_start, source_end) {
 }
 
 function fast_copy(from, to, j, i, jend) {
-  for(var iend = jend - j + i; i < iend; ++i) {
+  for(var iend = jend + i; i < iend; ++i) {
     to[j++] = from[i]
   } 
 }
 
 function slow_copy(from, to, j, i, jend) {
   // the buffers could overlap.
-  return fast_copy(
-      new Uint8Array(Array.prototype.slice.call(from, i, jend - j + i))
-    , to
-    , j
-    , i
-    , jend
-  )
+  var iend = jend + i
+    , tmp = new Uint8Array(slice.call(from, i, iend))
+    , x = 0
+
+  for(; i < iend; ++i, ++x) {
+    to[j++] = tmp[x]
+  }
 }

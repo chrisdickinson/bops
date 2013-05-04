@@ -11,6 +11,7 @@ test('subarray works as expected', function(assert) {
 
   tmp2 = binary.subarray(tmp1, 4)
   binary.writeUInt8(tmp2, 255, 0)
+
   assert.equal(binary.readUInt8(tmp1, 4), 255)
   assert.end()
 })

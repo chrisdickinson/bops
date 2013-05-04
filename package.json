@@ -6,6 +6,17 @@
   "scripts": {
     "test": "node test/index.js"
   },
+  "browser": {
+    "./copy.js": "./typedarray/copy.js",
+    "./create.js": "./typedarray/create.js",
+    "./from.js": "./typedarray/from.js",
+    "./join.js": "./typedarray/join.js",
+    "./mapped.js": "./typedarray/mapped.js",
+    "./read.js": "./typedarray/read.js",
+    "./subarray.js": "./typedarray/subarray.js",
+    "./to.js": "./typedarray/to.js",
+    "./write.js": "./typedarray/write.js"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/chrisdickinson/bops.git"
@@ -19,6 +30,10 @@
   "license": "MIT",
   "gitHead": "11f41e69b1ab4507027ac162981913b268445b4a",
   "devDependencies": {
-    "tape": "~0.2.2"
+    "tape": "~1.0.1"
+  },
+  "dependencies": {
+    "base64-js": "0.0.2",
+    "to-utf8": "0.0.1"
   }
 }
