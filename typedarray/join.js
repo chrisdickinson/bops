@@ -1,6 +1,10 @@
 module.exports = join
 
 function join(targets, hint) {
+  if(!targets.length) {
+    return new Uint8Array(0)
+  }
+
   var len = hint !== undefined ? hint : get_length(targets)
     , out = new Uint8Array(len)
     , cur = targets[0]
