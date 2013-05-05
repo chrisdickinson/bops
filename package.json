@@ -1,6 +1,6 @@
 {
   "name": "bops",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "buffer operations",
   "main": "index.js",
   "scripts": {
