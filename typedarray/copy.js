@@ -12,10 +12,13 @@ function copy(source, target, target_start, source_start, source_end) {
   return slow_copy(source, target, target_start, source_start, source_end)
 }
 
-function fast_copy(from, to, j, i, jend) {
-  for(var iend = jend + i; i < iend; ++i) {
-    to[j++] = from[i]
-  } 
+function fast_copy(source, target, target_start, source_start, source_end) {
+  for(var i = target_start, len = source_end - source_start + target_start, j = source_start;
+      i < len;
+      ++i,
+      ++j) {
+    target[j] = source[i]
+  }
 }
 
 function slow_copy(from, to, j, i, jend) {
