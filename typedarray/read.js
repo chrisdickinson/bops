@@ -14,7 +14,7 @@ module.exports = {
   , readDoubleBE:   read_double_be
 }
 
-var map = require('./mapped')
+var map = require('./mapped.js')
 
 function read_uint8(target, at) {
   return target[at]
