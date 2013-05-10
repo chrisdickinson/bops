@@ -14,7 +14,7 @@ module.exports = {
   , writeDoubleBE:   write_double_be
 }
 
-var map = require('./mapped')
+var map = require('./mapped.js')
 
 function write_uint8(target, value, at) {
   return target[at] = value

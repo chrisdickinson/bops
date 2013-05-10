@@ -15,6 +15,7 @@
     "./read.js": "./typedarray/read.js",
     "./subarray.js": "./typedarray/subarray.js",
     "./to.js": "./typedarray/to.js",
+    "./is.js": "./typedarray/is.js",
     "./write.js": "./typedarray/write.js"
   },
   "repository": {
