@@ -1,16 +1,16 @@
 var proto = {}
 module.exports = proto
 
-proto.from = require('./from')
-proto.to = require('./to')
-proto.is = require('./is')
-proto.subarray = require('./subarray')
-proto.join = require('./join')
-proto.copy = require('./copy')
-proto.create = require('./create')
+proto.from = require('./from.js')
+proto.to = require('./to.js')
+proto.is = require('./is.js')
+proto.subarray = require('./subarray.js')
+proto.join = require('./join.js')
+proto.copy = require('./copy.js')
+proto.create = require('./create.js')
 
-mix(require('./read'), proto)
-mix(require('./write'), proto)
+mix(require('./read.js'), proto)
+mix(require('./write.js'), proto)
 
 function mix(from, into) {
   for(var key in from) {
