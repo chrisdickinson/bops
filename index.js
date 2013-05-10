@@ -3,6 +3,7 @@ module.exports = proto
 
 proto.from = require('./from')
 proto.to = require('./to')
+proto.is = require('./is')
 proto.subarray = require('./subarray')
 proto.join = require('./join')
 proto.copy = require('./copy')
