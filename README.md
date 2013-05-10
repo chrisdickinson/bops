@@ -28,6 +28,10 @@ also accepts arrays.
 
 given a native buffer (and optional encoding) return a string.
 
+#### bops.is(buf) -> bool
+
+given a native buffer returns true.  Returns false for other values.
+
 #### bops.subarray(buf, start[, end]) -> buf
 
 return a view onto the original buffer.
