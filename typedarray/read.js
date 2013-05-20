@@ -1,5 +1,6 @@
 module.exports = {
     readUInt8:      read_uint8
+  , readInt8:       read_int8
   , readUInt16LE:   read_uint16_le
   , readUInt32LE:   read_uint32_le
   , readInt16LE:    read_int16_le
@@ -18,6 +19,11 @@ var map = require('./mapped.js')
 
 function read_uint8(target, at) {
   return target[at]
+}
+
+function read_int8(target, at) {
+  var v = target[at];
+  return v < 0x80 ? v : v - 0x100
 }
 
 function read_uint16_le(target, at) {
