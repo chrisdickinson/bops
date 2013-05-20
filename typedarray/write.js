@@ -1,5 +1,6 @@
 module.exports = {
     writeUInt8:      write_uint8
+  , writeInt8:       write_int8
   , writeUInt16LE:   write_uint16_le
   , writeUInt32LE:   write_uint32_le
   , writeInt16LE:    write_int16_le
@@ -18,6 +19,10 @@ var map = require('./mapped.js')
 
 function write_uint8(target, value, at) {
   return target[at] = value
+}
+
+function write_int8(target, value, at) {
+  return target[at] = value < 0 ? value + 0x100 : value
 }
 
 function write_uint16_le(target, value, at) {
