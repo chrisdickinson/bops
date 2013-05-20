@@ -44,7 +44,12 @@ compile several buffers into a single buffer.
 
 create a native buffer instance of `size`.
 
+#### bops.copy(source, target, target_start, source_start, source_end)
+
+perform a fast copy from one native buffer to another.
+
 #### readUInt8(buf, at)
+#### readInt8(buf, at)
 #### readUInt16LE(buf, at)
 #### readUInt32LE(buf, at)
 #### readInt8(buf, at)
@@ -62,6 +67,7 @@ create a native buffer instance of `size`.
 read a value from a buffer at a given byte offset.
 
 #### writeUInt8(buf, value, at)
+#### writeInt8(buf, value, at)
 #### writeUInt16LE(buf, value, at)
 #### writeUInt32LE(buf, value, at)
 #### writeInt8(buf, value, at)
