@@ -20,7 +20,7 @@ function copy(source, target, target_start, source_start, source_end) {
   }
 
   if(target.length - target_start < source_end - source_start) {
-    source_end = target.length - target_start + start
+    source_end = target.length - target_start + source_start
   }
 
   if(source.buffer !== target.buffer) {
