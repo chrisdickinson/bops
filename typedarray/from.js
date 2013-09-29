@@ -93,8 +93,6 @@ function codepoint_to_bytes(arr, code) {
   if(pos) {
     arr[arr.length] = _byte
   }
-
-  console.groupEnd()
 }
 
 function pad(str) {
