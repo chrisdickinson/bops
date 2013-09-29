@@ -1,6 +1,7 @@
 # bops
 
 [![Build Status](https://travis-ci.org/chrisdickinson/tar-parse.png)](https://travis-ci.org/chrisdickinson/tar-parse)
+[![TESTLING](https://ci.testling.com/chrisdickinson/bops.png)](https://ci.testling.com/chrisdickinson/bops)
 [![NPM](https://nodei.co/npm/bops.png?downloads=true&stars=true)](https://nodei.co/npm/bops/)
 
 buffer/typed array agnostic buffer operations.
