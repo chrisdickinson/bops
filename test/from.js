@@ -13,10 +13,10 @@ test('from array works', function(assert) {
 })
 
 test('from utf8 works as expected', function(assert) {
-  var buf = binary.from('ƒello 淾淾淾 hello world 淾淾 yep ƒuu 淾', 'utf8')
+  var buf = binary.from('ƒello 淾淾淾 hello world 淾淾 yep ƒuu 淾 \ud83d\ude04', 'utf8')
     , expect
 
-  expect = [198,146,101,108,108,111,32,230,183,190,230,183,190,230,183,190,32,104,101,108,108,111,32,119,111,114,108,100,32,230,183,190,230,183,190,32,121,101,112,32,198,146,117,117,32,230,183,190]
+  expect = [198,146,101,108,108,111,32,230,183,190,230,183,190,230,183,190,32,104,101,108,108,111,32,119,111,114,108,100,32,230,183,190,230,183,190,32,121,101,112,32,198,146,117,117,32,230,183,190,32,0xF0,0x9F,0x98,0x84]
 
   assert.equal(buf.length, expect.length)
   for(var i = 0, len = buf.length; i < len; ++i) {

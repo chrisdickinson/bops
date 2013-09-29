@@ -117,7 +117,7 @@ function fixed_cca(str, idx) {
       throw new Error('High surrogate not followed by low surrogate')
     }
 
-    return ((hi - 0xD800) * 0x400) + (lo - 0xDC00) + 10000
+    return ((hi - 0xD800) * 0x400) + (lo - 0xDC00) + 0x10000
   }
 
   if(0xDC00 <= code && code <= 0xDFFF) {
