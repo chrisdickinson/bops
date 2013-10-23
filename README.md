@@ -6,6 +6,12 @@
 
 buffer/typed array agnostic buffer operations.
 
+`bops` presents a JavaScript API for working with binary data that will work exactly the same in supported browsers and in node. due to the way that `Buffer` is implemented in node it is impossible to take code written against the `Buffer` API and make it work on top of binary data structures (Array Buffers and Typed Arrays) in the browser.
+
+instead you have to fake the API on top of `Object`, but `Object` isn't designed for holding raw binary data and will be really slow/memory inefficient for many common binary use cases (parsing files, writing files, etc).
+
+use `bops` in place of `Buffer` or `Uint8Array` to make your binary JS code fast + portable.
+
 ```javascript
 var binary = require('bops')
 

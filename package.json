@@ -31,7 +31,7 @@
   "license": "MIT",
   "gitHead": "11f41e69b1ab4507027ac162981913b268445b4a",
   "devDependencies": {
-    "tape": "~1.0.1"
+    "tape": "~2.0.0"
   },
   "dependencies": {
     "base64-js": "0.0.2",
@@ -40,11 +40,10 @@
   "testling": {
     "files": "test/index.js",
     "browsers": [
-      "ie/10..latest",
-      "chrome/20..latest",
-      "firefox/15..latest",
-      "safari/latest",
+      "firefox/15..nightly",
+      "chrome/20..canary",
       "opera/11.6..latest",
+      "safari/4..latest",
       "iphone/6",
       "ipad/6"
     ]
