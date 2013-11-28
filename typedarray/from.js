@@ -91,6 +91,7 @@ function codepoint_to_bytes(arr, code) {
   }
 
   if(pos) {
+    _byte |= +!!(code & 1) << (7 - pos)
     arr[arr.length] = _byte
   }
 }
@@ -99,6 +100,7 @@ function pad(str) {
   while(str.length < 8) {
     str = '0' + str
   }
+
   return str
 }
 
@@ -126,8 +128,6 @@ function fixed_cca(str, idx) {
 
   return code
 }
-
-
 
 function from_base64(str) {
   return new Uint8Array(base64.toByteArray(str)) 
