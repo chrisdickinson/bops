@@ -34,7 +34,7 @@
     "tape": "~2.0.0"
   },
   "dependencies": {
-    "base64-js": "0.0.2",
+    "base64-js": "1.0.2",
     "to-utf8": "0.0.1"
   },
   "testling": {
