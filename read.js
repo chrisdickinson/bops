@@ -1,3 +1,5 @@
+var Buffer = require('buffer').Buffer
+
 var proto = {}
   , rex = /read.+/
   , buildFn
