@@ -1,11 +1,9 @@
 var Buffer = require('buffer').Buffer
 
-var majorVersion = process.version.replace(/^v/, '').split('.')[0];
+var version = ((process || {}).version || 'v0.0.0').slice(1).split('.')[0]
 
-module.exports = function(source, encoding) {
-  if (!majorVersion || majorVersion < 6) {
-    return new Buffer(source, encoding)
-  } else {
-    return Buffer.from(source, encoding)
-  }
-}
+module.exports = (
+  Number(version) < 6
+  ? function from(source, encoding) { return new Buffer(source, encoding) }
+  : function from(source, encoding) { return Buffer.from(source, encoding) }
+)
