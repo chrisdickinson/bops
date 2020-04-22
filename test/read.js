@@ -1,5 +1,6 @@
 var test = require('tape')
   , binary = require('../index')
+  , zlib = require('zlib')
 
 test('read works as expected', function(assert) {
   var tests = {
@@ -30,3 +31,18 @@ test('read works as expected', function(assert) {
   }
   assert.end()
 })
+
+test('broken case', function(t) {
+  var text = "H4sIAAAAAAAAA+3czU7CUBSF0TIA48DEgQ58/xdVIiQE7ukPXHoOsFbyjTRQaHcUJA4DAAAAAAAAAAAAAAAAAABc2h4CLtkHxOwDYvYBMfuAmH1AzD4gZh8Qsw+I2QfE7ANi9gEx+4CYfUDMPiBmHxCzD4jZB8TsA2L2ATH7gJh9QMw+IGYfELMPiNkHxOwDYvYBMfuAmH3w6j5POmcfVPSz0v3sN/Fx0vlG7IMKNn+9jXSLsdudyj7Itt/GdqJbfDeaur+e9w/XmrONe1yfX8OyzZDj+HvFe/aBJJi7jbWuz7HN0N/U787n10fVjcx9rbzkNfWSbWRen8fNPJtbXpP16nhup76+nfG9c16nZj/ea56b6vt4Vkuf/0fpFR+zffSXfT7twz4qyz6f92o3Uvax2cfjyD6fso/Kss+n+jb2c3M39LHpdDunrvmczBqfrck+n+rbWu+ptWS/11fh/UNpX0v2MUlVask+JqlKLdnHJFWpJfuYpCq1ZB+TVKVX+7urJEmSJEmSVLHW/3SR9B8AAAAAAAAAAAAAAAAAAAAAAAAANfwCLfpEO4A4AQA=";
+  var zipped = binary.from(text, 'base64');
+  zlib.gunzip(zipped, function(err, buf) {
+    if (err) {
+      throw err;
+    } else {
+      t.equal(buf[14984], 5);
+      t.equal(buf.readUInt32LE(14984), 5);
+      t.equal(buf.readUInt8(14984), 5);
+      t.end();
+    }
+  });
+});
